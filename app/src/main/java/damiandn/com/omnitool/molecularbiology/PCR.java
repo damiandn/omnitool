@@ -45,16 +45,21 @@ public class PCR extends Activity implements View.OnClickListener {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+
+           //need to add checks to make sure the template isn't too high, and that both these editTexts contain only INTS
+
+
                 switch (position) {
 
                     case 0:
 
                         Bundle PCRparameters = new Bundle();
 
+
                         if (isEmpty(PCRproductSize)) {
                             productsize = 1000.0;
                             PCRparameters.putDouble("ProductSize", 1000);
-                        }else {
+                        } else {
                             productsize = Double.parseDouble(PCRproductSize.getText().toString());
                             PCRparameters.putDouble("ProductSize", Double.parseDouble(PCRproductSize.getText().toString()));
 
@@ -75,7 +80,7 @@ public class PCR extends Activity implements View.OnClickListener {
 
                         if (isEmpty(TemplateAmount)) {
                             PCRparameters.putDouble("template", 1);
-                        }else {
+                        } else {
 
                             PCRparameters.putDouble("template", Double.parseDouble(TemplateAmount.getText().toString()));
 
@@ -96,7 +101,7 @@ public class PCR extends Activity implements View.OnClickListener {
                         if (isEmpty(PCRproductSize)) {
                             productsize = 1000.0;
                             PCRparameters1.putDouble("ProductSize", 1000);
-                        }else {
+                        } else {
                             productsize = Double.parseDouble(PCRproductSize.getText().toString());
                             PCRparameters1.putDouble("ProductSize", Double.parseDouble(PCRproductSize.getText().toString()));
 
@@ -105,12 +110,11 @@ public class PCR extends Activity implements View.OnClickListener {
 
                         if (isEmpty(TemplateAmount)) {
                             PCRparameters1.putDouble("template", 1);
-                        }else {
+                        } else {
 
                             PCRparameters1.putDouble("template", Double.parseDouble(TemplateAmount.getText().toString()));
 
                         }
-
 
 
                         if (productsize <= 10000) {
@@ -123,9 +127,7 @@ public class PCR extends Activity implements View.OnClickListener {
                             PCRparameters1.putDouble("AnnealingTime", 20);
 
 
-
-
-                        }else {
+                        } else {
                             PCRparameters1.putDouble("primer", 1);
                             PCRparameters1.putDouble("dNTP", 2.5);
                             PCRparameters1.putDouble("ExtensionTemp", 68);
@@ -146,7 +148,7 @@ public class PCR extends Activity implements View.OnClickListener {
                         i1.putExtras(PCRparameters1);
                         startActivity(i1);
 
-                    break;
+                        break;
 
                     case 2:
 
@@ -155,7 +157,7 @@ public class PCR extends Activity implements View.OnClickListener {
                         if (isEmpty(PCRproductSize)) {
                             productsize = 1000.0;
                             PCRparameters2.putDouble("ProductSize", 1000);
-                        }else {
+                        } else {
                             productsize = Double.parseDouble(PCRproductSize.getText().toString());
                             PCRparameters2.putDouble("ProductSize", Double.parseDouble(PCRproductSize.getText().toString()));
 
@@ -176,7 +178,7 @@ public class PCR extends Activity implements View.OnClickListener {
 
                         if (isEmpty(TemplateAmount)) {
                             PCRparameters2.putDouble("template", 1);
-                        }else {
+                        } else {
 
                             PCRparameters2.putDouble("template", Double.parseDouble(TemplateAmount.getText().toString()));
                         }
@@ -194,12 +196,11 @@ public class PCR extends Activity implements View.OnClickListener {
                         if (isEmpty(PCRproductSize)) {
                             productsize = 1000.0;
                             PCRparameters3.putDouble("ProductSize", 1000);
-                        }else {
+                        } else {
                             productsize = Double.parseDouble(PCRproductSize.getText().toString());
                             PCRparameters3.putDouble("ProductSize", Double.parseDouble(PCRproductSize.getText().toString()));
 
                         }
-
 
 
                         PCRparameters3.putDouble("primer", 1);
@@ -217,7 +218,7 @@ public class PCR extends Activity implements View.OnClickListener {
 
                         if (isEmpty(TemplateAmount)) {
                             PCRparameters3.putDouble("template", 1);
-                        }else {
+                        } else {
 
                             PCRparameters3.putDouble("template", Double.parseDouble(TemplateAmount.getText().toString()));
                         }
