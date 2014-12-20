@@ -1,40 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Setup Ligation"
+        android:transitionName="trans_setupPCR"
+        android:textSize="20dp"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvSetupLigationTitle"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+
+        />
+
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Ligation Information"
+        android:textSize="20dp"
+        android:background="#C5CAE9"
+        android:id="@+id/tvSetupPCR_setup_amounts"
+        android:elevation="5dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+
+        />
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vector Size"
+        android:layout_weight="10"
         android:layout_marginTop="10dp"
         android:padding="3dp"
         android:textSize="20dp"
         android:id="@+id/tvVectorSize" />
 
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="5"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:textSize="20dp"
+            android:id="@+id/etVectorSize"
+           android:layout_alignParentEnd="true" />
+
+        </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Insert Size"
+        android:layout_weight="10"
         android:padding="3dp"
         android:textSize="20dp"
         android:layout_below="@id/tvVectorSize"
         android:id="@+id/tvInsertSize" />
 
-    <TextView
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="5"
+            android:padding="3dp"
+            android:textSize="20dp"
+            android:id="@+id/etInsertSize"
+            android:layout_alignBottom="@id/tvInsertSize"
+            android:layout_below="@+id/etVectorSize"
+            android:layout_alignParentEnd="true" />
+    </LinearLayout>
+
+
+
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Vector Concentration"
         android:padding="3dp"
         android:textSize="20dp"
+        android:layout_weight="10"
         android:layout_below="@id/tvInsertSize"
         android:id="@+id/tvVectorConcentration" />
 
-    <TextView
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="5"
+                android:textSize="20dp"
+                android:padding="3dp"
+                android:layout_alignBottom="@id/tvVectorConcentration"
+                android:id="@+id/etVectorConcentration"
+                android:layout_below="@+id/etInsertSize"
+                android:layout_alignParentEnd="true" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
+        android:layout_weight="10"
         android:layout_below="@id/tvVectorConcentration"
         android:text="Insert Concentration"
         android:padding="3dp"
@@ -42,50 +137,41 @@
 
 
 
-    <EditText
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="5"
+                android:padding="3dp"
+                android:textSize="20dp"
+                android:layout_alignBottom="@id/tvInsertConcentration"
+                android:id="@+id/etInsertConcentration"
+                android:layout_below="@+id/tvVectorConcentration"
+                android:layout_alignParentEnd="true" />
+
+        </LinearLayout>
+
+
+
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="5"
-        android:textSize="15dp"
-        android:id="@+id/etVectorSize"
-        android:layout_alignBottom="@+id/tvVectorSize"
-        android:layout_alignParentEnd="true" />
+        android:text="Calculate"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bLigationCalculate"
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="5"
-        android:textSize="15dp"
-        android:id="@+id/etInsertSize"
-        android:layout_alignBottom="@id/tvInsertSize"
-        android:layout_below="@+id/etVectorSize"
-        android:layout_alignParentEnd="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="5"
-        android:textSize="15dp"
-        android:layout_alignBottom="@id/tvVectorConcentration"
-        android:id="@+id/etVectorConcentration"
-        android:layout_below="@+id/etInsertSize"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/tvInsertConcentration"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="5"
-        android:textSize="15dp"
-        android:layout_alignBottom="@id/tvInsertConcentration"
-        android:id="@+id/etInsertConcentration"
-        android:layout_below="@+id/tvVectorConcentration"
-        android:layout_alignParentEnd="true" />
 
-    <RelativeLayout
+
+
+
+
+        <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/ligation_result_layout"
@@ -201,15 +287,6 @@
 
     </RelativeLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
-        android:layout_marginTop="10dp"
-        android:id="@+id/bLigationCalculate"
 
 
-        android:layout_below="@+id/tvInsertConcentration"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+</LinearLayout>

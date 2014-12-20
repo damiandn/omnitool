@@ -3,6 +3,7 @@ package damiandn.com.omnitool.molecularbiology;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -26,6 +27,11 @@ public class Ligation extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setStatusBarColor(0xFF00796B);
+        getWindow().setStatusBarColor(0xFF303F9F);
+
         setContentView(R.layout.ligation);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);  //keeps the screen on
 
