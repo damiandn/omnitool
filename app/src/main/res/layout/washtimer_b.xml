@@ -13,7 +13,7 @@
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Wash Timer"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:background="#009688"
         android:textColor="#FFFFFF"
         android:id="@+id/tvWashTimerTitle"

@@ -10,6 +10,9 @@
 
         <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
 
+        <item name="android:editTextStyle">@style/RobotoEditTextStyle</item>
+
+
         <item name="android:windowSharedElementEnterTransition">@transition/my_transition</item>
           <item name="android:windowSharedElementExitTransition">@transition/my_transition</item>
 
@@ -20,6 +23,10 @@
 
 
     <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="RobotoEditTextStyle" parent="android:Widget.EditText">
         <item name="android:fontFamily">sans-serif-light</item>
     </style>
 

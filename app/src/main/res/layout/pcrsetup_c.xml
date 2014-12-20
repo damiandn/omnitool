@@ -9,10 +9,9 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="50dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Setup PCR"
         android:transitionName="trans_setupPCR"
-        android:textSize="30dp"
+        android:textSize="20dp"
         android:background="#3F51B5"
         android:textColor="#FFFFFF"
         android:id="@+id/tvSetupPCRTitle"
