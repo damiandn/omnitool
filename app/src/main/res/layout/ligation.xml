@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vector Size"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:id="@+id/tvVectorSize" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insert Size"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:layout_below="@id/tvVectorSize"
+        android:id="@+id/tvInsertSize" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Vector Concentration"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:layout_below="@id/tvInsertSize"
+        android:id="@+id/tvVectorConcentration" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_below="@id/tvVectorConcentration"
+        android:text="Insert Concentration"
+        android:padding="3dp"
+        android:id="@+id/tvInsertConcentration" />
+
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="15dp"
+        android:id="@+id/etVectorSize"
+        android:layout_alignBottom="@+id/tvVectorSize"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="15dp"
+        android:id="@+id/etInsertSize"
+        android:layout_alignBottom="@id/tvInsertSize"
+        android:layout_below="@+id/etVectorSize"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="15dp"
+        android:layout_alignBottom="@id/tvVectorConcentration"
+        android:id="@+id/etVectorConcentration"
+        android:layout_below="@+id/etInsertSize"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="15dp"
+        android:layout_alignBottom="@id/tvInsertConcentration"
+        android:id="@+id/etInsertConcentration"
+        android:layout_below="@+id/tvVectorConcentration"
+        android:layout_alignParentEnd="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ligation_result_layout"
+        android:visibility="invisible">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="For 1uL vector, add..."
+        android:id="@+id/textView5"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:layout_above="@+id/tv1to1"
+        android:layout_alignParentStart="true"
+        android:paddingBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1:1"
+        android:paddingLeft="50dp"
+        android:paddingBottom="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:id="@+id/tv1to1"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="50dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/tv1to1"
+        android:id="@+id/tv1to1result"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1:2"
+        android:paddingRight="50dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+          android:id="@+id/tv1to2"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="20dp"
+        android:paddingRight="50dp"
+        android:layout_below="@+id/tv1to2"
+        android:id="@+id/tv1to2result"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1:8"
+        android:paddingRight="50dp"
+        android:textSize="20dp"
+        android:paddingTop="50dp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        android:id="@+id/tv1to8"
+        android:layout_below="@+id/tv1to2result"
+
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:paddingRight="50dp"
+        android:layout_below="@+id/tv1to8"
+        android:id="@+id/tv1to8result"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1:4"
+        android:paddingLeft="50dp"
+        android:textSize="20dp"
+        android:paddingTop="50dp"
+        android:textStyle="bold"
+        android:paddingBottom="10dp"
+        android:id="@+id/tv1to4"
+        android:layout_below="@+id/tv1to2result"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:paddingLeft="50dp"
+        android:layout_below="@+id/tv1to4"
+        android:id="@+id/tv1to4result"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true"
+        />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_marginTop="10dp"
+        android:id="@+id/bLigationCalculate"
+
+
+        android:layout_below="@+id/tvInsertConcentration"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

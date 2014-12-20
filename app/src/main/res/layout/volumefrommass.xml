@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mass"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:id="@+id/tvVolumeFromMass_Mass" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="15dp"
+        android:layout_centerInParent="true"
+
+        android:id="@+id/etVolumeFromMass_Mass"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spVolumeFromMass_Mass"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/etVolumeFromMass_Mass"
+        android:layout_alignBottom="@id/etVolumeFromMass_Mass"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mw"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:layout_below="@id/tvVolumeFromMass_Mass"
+        android:id="@+id/tvVolumeFromMass_MolarMass" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="15dp"
+        android:id="@+id/etVolumeFromMass_MolarMass"
+        android:layout_centerInParent="true"
+
+        android:layout_below="@+id/etVolumeFromMass_Mass"
+        android:layout_alignStart="@+id/etVolumeFromMass_Mass" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Concentration"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:layout_below="@id/tvVolumeFromMass_MolarMass"
+        android:id="@+id/tvVolumeFromMass_Concentration" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:layout_centerInParent="true"
+        android:textSize="15dp"
+        android:id="@+id/etVolumeFromMass_Concentration"
+        android:layout_below="@+id/etVolumeFromMass_MolarMass"
+        android:layout_alignStart="@+id/etVolumeFromMass_MolarMass" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spVolumeFromMass_Concentration"
+        android:layout_below="@+id/etVolumeFromMass_MolarMass"
+        android:layout_toEndOf="@+id/bCalculateVolumeFromMass"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/etVolumeFromMass_Concentration"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:padding="3dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/bCalculateVolumeFromMass"
+        android:layout_alignStart="@+id/etVolumeFromMass_MolarMass"
+       android:layout_below="@id/etVolumeFromMass_Concentration" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:padding="3dp"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@+id/tvResult_VolumeFromMass_SolventToAdd"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:id="@+id/tvVolumeFromMass_SolventToAdd"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/tvVolumeFromMass_Mass" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="20dp"
+        android:id="@+id/tvResult_VolumeFromMass_SolventToAdd"
+        android:layout_alignStart="@+id/etVolumeFromMass_MolarMass"
+        android:layout_alignBottom="@+id/tvVolumeFromMass_SolventToAdd"
+        />
+
+
+
+
+
+
+</RelativeLayout>

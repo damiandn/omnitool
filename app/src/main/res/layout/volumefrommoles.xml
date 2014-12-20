@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Moles"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:id="@+id/tvVolumeFromMoles_Moles" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:layout_marginTop="10dp"
+        android:textSize="15dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/etVolumeFromMoles_Moles"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spVolumeFromMoles_Moles"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/etVolumeFromMoles_Moles"
+        android:layout_alignBottom="@id/etVolumeFromMoles_Moles"
+         />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Concentration"
+        android:padding="3dp"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_below="@id/tvVolumeFromMoles_Moles"
+        android:id="@+id/tvVolumeFromMoles_Concentration" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:textSize="15dp"
+        android:id="@+id/etVolumeFromMoles_Concentration"
+        android:layout_below="@+id/etVolumeFromMoles_Moles"
+        android:layout_alignStart="@+id/etVolumeFromMoles_Moles" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/spVolumeFromMoles_Concentration"
+        android:layout_alignTop="@+id/tvVolumeFromMoles_Concentration"
+        android:layout_toEndOf="@+id/etVolumeFromMoles_Concentration"
+        android:layout_alignBottom="@+id/etVolumeFromMoles_Concentration"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:padding="3dp"
+        android:layout_marginTop="31dp"
+        android:id="@+id/bCalculateVolumeFromMoles"
+        android:layout_below="@+id/tvVolumeFromMoles_Concentration"
+        android:layout_toEndOf="@+id/tvVolumeFromMoles_Concentration" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:padding="3dp"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:id="@+id/tvVolumeFromMoles_SolventToAdd"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

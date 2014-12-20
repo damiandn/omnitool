@@ -1,0 +1,27 @@
+<resources>
+
+    <!-- Base application theme. -->
+
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <!-- Customize your theme here. -->
+        <item name="android:windowContentTransitions"> true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+
+        <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+
+        <item name="android:windowSharedElementEnterTransition">@transition/my_transition</item>
+          <item name="android:windowSharedElementExitTransition">@transition/my_transition</item>
+
+
+
+
+      </style>
+
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+
+  </resources>

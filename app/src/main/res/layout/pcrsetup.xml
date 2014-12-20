@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:transitionName="trans_codonlookup"
+        android:textSize="30dp"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvAminoAcidViewName"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TableRow>
+        <TextView
+            android:text="Component"
+            android:padding="10dip"
+            android:textStyle="bold"/>
+        <TextView
+            android:text="Amount (uL)"
+            android:gravity="center_horizontal"
+            android:padding="10dip"
+            android:textStyle="bold"
+            android:layout_column="18" />
+    </TableRow>
+
+
+
+    <TableRow>
+        <TextView
+            android:text="Water"
+            android:padding="3dip" />
+        <TextView
+            android:text=""
+            android:id="@+id/tvPCRWater"
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="10X Buffer"
+            android:id="@+id/tvPCRBuffer"
+            android:padding="3dip" />
+        <TextView
+            android:text=""
+            android:id="@+id/tvPCRBufferAmount"
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Primer 1"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/tvPCRPrimer1"
+            android:text=""
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="Primer 2"
+            android:padding="3dip" />
+        <TextView
+            android:text=""
+            android:id="@+id/tvPCRPrimer2"
+
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:text="dNTP"
+            android:padding="3dip" />
+        <TextView
+            android:text=""
+            android:id="@+id/tvPCRdNTP"
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="template"
+            android:padding="3dip" />
+        <TextView
+            android:text=""
+            android:id="@+id/tvPCRtemplate"
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text="enzyme"
+            android:padding="3dip" />
+        <TextView
+            android:text=""
+            android:id="@+id/tvPCREnzyme"
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+
+
+
+    <TableRow>
+        <TextView
+            android:text=""
+            android:padding="3dip" />
+        <TextView
+            android:text=""
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:layout_column="18" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:textStyle="bold"
+            android:text="Temperature (C)"
+            android:padding="10dip" />
+        <TextView
+            android:textStyle="bold"
+            android:text="Time (s)"
+            android:gravity="center_horizontal"
+            android:padding="10dip"
+            android:layout_column="18" />
+    </TableRow>
+
+
+
+
+    <TableRow>
+        <TextView
+            android:text=""
+            android:paddingBottom="10dip"
+            android:padding="3dip"
+            android:id="@+id/tvInitialDenaturationTemp"
+            />
+        <TextView
+            android:text=""
+            android:gravity="center_horizontal"
+            android:padding="10dip"
+            android:id="@+id/tvInitialDenaturationTime"
+            android:layout_column="18" />
+    </TableRow>
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#000000"/>
+
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:text=""
+            android:padding="3dip"
+            android:id="@+id/tvDenaturationTemp"
+            />
+        <TextView
+            android:text=""
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:id="@+id/tvDenaturationTime"
+            android:layout_column="18" />
+    </TableRow>
+
+
+    <TableRow>
+
+        <TextView
+
+            android:text="primer Tm - 5C"
+            android:padding="3dip"
+
+            />
+        <TextView
+            android:text=""
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:id="@+id/tvAnnealingTime"
+            android:layout_column="18" />
+    </TableRow>
+
+
+    <TableRow>
+        >
+
+        <TextView
+            android:text=""
+            android:padding="3dip"
+            android:id="@+id/tvExtensionTemp"
+            />
+        <TextView
+            android:text=""
+            android:gravity="center_horizontal"
+            android:padding="3dip"
+            android:id="@+id/tvExtensionTime"
+            android:layout_column="18" />
+    </TableRow>
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+
+        android:layout_below="@+id/tvFoodItemTitle"
+        android:background="#000000"/>
+
+    <TableRow>
+        <TextView
+            android:id="@+id/tvFinalExtensionTemp"
+            android:padding="3dip"
+            android:paddingTop="10dip"
+            />
+        <TextView
+            android:text="5-15 minutes"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dip"
+
+            android:layout_column="18" />
+    </TableRow>
+
+
+
+    <RelativeLayout
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/bPCRSubtractMM"/>
+
+        <Button
+            android:text="-"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/bPCRSubtractMM"/>
+
+        <TextView
+            android:id="@+id/tvPCRMMNumber"
+            android:layout_toRightOf="@+id/bPCRSubtractMM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="20dp"
+            android:paddingTop="10dp"
+
+            />
+        <Button
+            android:text="+"
+            android:id="@+id/bPCRAddMM"
+            android:layout_toRightOf="@+id/tvPCRMMNumber"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Master Mix"
+            android:id="@+id/textView2"
+            android:layout_column="8" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    </TableRow>
+
+
+</TableLayout>
+

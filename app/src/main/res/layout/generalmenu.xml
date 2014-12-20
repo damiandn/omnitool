@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:layout_height="50dp"
+        android:layout_width="fill_parent"
+        android:elevation="8dp"
+        android:id="@+id/tvGeneralTitle"
+        android:text="General Tools"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:transitionName="trans_general"
+        android:background="#009688"
+        android:drawSelectorOnTop="true"
+        android:gravity="center"
+        />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvGeneralMenu"
+        android:background="#B2DFDB"/>
+
+</LinearLayout>

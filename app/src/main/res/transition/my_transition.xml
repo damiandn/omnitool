@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
+
+       <changeBounds
+        android:duration="400"
+        >
+        <targets>
+            <target android:targetId="@id/tvStartMoBio" />
+            <target android:targetId="@id/tvMolBioTitle" />
+        </targets>
+    </changeBounds>
+    <changeImageTransform>
+        <targets>
+            <target android:targetId="@id/tvStartMoBio" />
+            <target android:targetId="@id/tvMolBioTitle" />
+        </targets>
+    </changeImageTransform>
+
+    <changeBounds
+        android:duration="400"
+        >
+        <targets>
+            <target android:targetId="@id/tvStartGeneral" />
+            <target android:targetId="@id/tvGeneralTitle" />
+        </targets>
+    </changeBounds>
+    <changeImageTransform>
+        <targets>
+            <target android:targetId="@id/tvStartGeneral" />
+            <target android:targetId="@id/tvGeneralTitle" />
+        </targets>
+    </changeImageTransform>
+
+    <changeBounds
+        android:duration="400"
+        >
+        <targets>
+            <target android:targetId="@id/tvMolBioTitle" />
+            <target android:targetId="@id/tvImagingTitle" />
+        </targets>
+    </changeBounds>
+    <changeImageTransform>
+        <targets>
+            <target android:targetId="@id/tvMolBioTitle" />
+            <target android:targetId="@id/tvImagingTitle" />
+        </targets>
+    </changeImageTransform>
+
+    <changeBounds
+        android:duration="400"
+        >
+        <targets>
+            <target android:targetId="@id/tvListItem" />
+            <target android:targetId="@id/tvAminoAcidViewName" />
+        </targets>
+    </changeBounds>
+    <changeImageTransform>
+        <targets>
+            <target android:targetId="@id/tvListItem" />
+            <target android:targetId="@id/tvAminoAcidViewName" />
+        </targets>
+    </changeImageTransform>
+
+
+</transitionSet>

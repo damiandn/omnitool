@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:text="Product Size (bp)"
+        android:id="@+id/tvPCRProductSize"
+        android:layout_alignParentStart="true"
+        />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:textSize="15dp"
+        android:id="@+id/etPCRProductSize"
+        android:layout_alignBottom="@+id/tvPCRProductSize"
+
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:textSize="20dp"
+        android:layout_below="@+id/tvPCRProductSize"
+        android:text="Template amount (uL)"
+        android:id="@+id/tvPCRTemplateAmount"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+
+        android:layout_alignBottom="@+id/tvPCRTemplateAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="5"
+        android:layout_alignParentEnd="true"
+        android:textSize="15dp"
+        android:id="@+id/etPCRTemplateAmount"
+        android:layout_below="@+id/etPCRProductSize"
+         />
+
+    <TextView
+        android:paddingTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Enzyme"
+        android:textSize="20dp"
+        android:id="@+id/tvSelectEnzyme"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@+id/tvPCRTemplateAmount"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp" />
+
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvSelectPCREnzyme"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvSelectEnzyme" />
+</RelativeLayout>

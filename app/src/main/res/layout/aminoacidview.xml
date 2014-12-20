@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C5CAE9">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:transitionName="trans_codonlookup"
+        android:textSize="30dp"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvAminoAcidViewName"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        />
+
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="10dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ivAminoAcid"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/isoleucine"
+            android:layout_marginBottom="20dp"
+            android:padding="10dp"
+            />
+
+
+        </android.support.v7.widget.CardView>
+
+
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_marginBottom="20dp"
+        android:background="#000000"
+        android:layout_marginTop="10dp"/>
+
+
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view2"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="10dp"
+        >
+
+  <LinearLayout
+      android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+
+    <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Mw"
+                android:textSize="15dp"
+                android:padding="5dp"
+                android:layout_gravity="left"
+                android:id="@+id/tvAminoAcidViewMolarMass" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1"
+                android:text="New Text"
+                android:padding="5dp"
+
+                android:textSize ="15dp"
+                android:id="@+id/tvAminoAcidViewMolarMassResult" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="PKa (NH3)"
+            android:textSize="15dp"
+            android:padding="5dp"
+
+            android:layout_gravity="left"
+            android:id="@+id/tvAminoAcidViewPKANH3" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="New Text"
+            android:padding="5dp"
+
+            android:textSize ="15dp"
+            android:id="@+id/tvAminoAcidViewPKaNH3Result" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="PKa (COOH)"
+            android:textSize="15dp"
+            android:padding="5dp"
+
+            android:layout_gravity="left"
+            android:id="@+id/tvAminoAcidViewPKACOOH" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="New Text"
+            android:padding="5dp"
+            android:textSize ="15dp"
+            android:id="@+id/tvAminoAcidViewPKaCOOHResult" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="PKa (Side Chain)"
+            android:textSize="15dp"
+            android:padding="5dp"
+            android:layout_gravity="left"
+            android:id="@+id/tvAminoAcidViewPKASidechain" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="New Text"
+            android:padding="5dp"
+
+            android:textSize ="15dp"
+            android:id="@+id/tvAminoAcidViewPKaSideChainResult" />
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Class"
+            android:textSize="15dp"
+            android:padding="5dp"
+            android:layout_gravity="left"
+            android:id="@+id/tvAminoAcidViewClass" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_weight="1"
+            android:text="New Text"
+            android:padding="5dp"
+            android:textSize ="15dp"
+            android:id="@+id/tvAminoAcidViewClassResult" />
+    </LinearLayout>
+
+  </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
