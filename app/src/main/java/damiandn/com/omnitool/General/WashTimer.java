@@ -3,11 +3,13 @@ package damiandn.com.omnitool.General;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.os.SystemClock;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -36,7 +38,6 @@ public class WashTimer extends Activity implements View.OnClickListener {
     CardView cvTimer1, cvTimer2, cvTimer3, cvTimer4, cvTimer5, cvTimer6;
 
 
-
     private Handler customHandler1 = new Handler();
     private Handler customHandler2 = new Handler();
     private Handler customHandler3 = new Handler();
@@ -62,6 +63,10 @@ public class WashTimer extends Activity implements View.OnClickListener {
 
 
         setContentView(R.layout.washtimer_b);
+
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        //really should have it wake up when the time goes off
+        //probably can do this by throwing a notification
 
         Bundle parameters = getIntent().getExtras();
 
@@ -320,6 +325,8 @@ public class WashTimer extends Activity implements View.OnClickListener {
                 timerArray.get(currentTimer).setText("" + mins + ":" + String.format("%02d", secs));
                 handlerArray.get(currentTimer).postDelayed(this, 0);
             } else {
+
+
 
                 buttonArray.get(currentTimer).setVisibility(View.INVISIBLE);
 

@@ -89,7 +89,9 @@
             android:label="@string/app_name">
         </activity>
 
-
+        <activity android:name=".molecularbiology.Ligation_Result"
+            android:label="@string/app_name">
+        </activity>
 
 
     </application>

@@ -1,6 +1,7 @@
 package damiandn.com.omnitool.molecularbiology;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -20,31 +21,25 @@ import damiandn.com.omnitool.R;
 public class Ligation extends Activity implements View.OnClickListener {
 
     Button bCalculate;
-    TextView tv1to1result, tv1to2result, tv1to4result, tv1to8result;
     EditText etVectorConcentration, etInsertConcentration, etVectorSize, etInsertSize;
-    RelativeLayout resultRelativeLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setStatusBarColor(0xFF00796B);
+//        getWindow().setStatusBarColor(0xFF00796B);
         getWindow().setStatusBarColor(0xFF303F9F);
 
         setContentView(R.layout.ligation);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);  //keeps the screen on
 
         bCalculate = (Button) findViewById(R.id.bLigationCalculate);
-        tv1to1result = (TextView) findViewById(R.id.tv1to1result);
-        tv1to2result = (TextView) findViewById(R.id.tv1to2result);
-        tv1to4result = (TextView) findViewById(R.id.tv1to4result);
-        tv1to8result = (TextView) findViewById(R.id.tv1to8result);
+
         etVectorConcentration = (EditText) findViewById(R.id.etVectorConcentration);
         etInsertConcentration = (EditText) findViewById(R.id.etInsertConcentration);
         etVectorSize = (EditText) findViewById(R.id.etVectorSize);
         etInsertSize = (EditText) findViewById(R.id.etInsertSize);
-        resultRelativeLayout = (RelativeLayout) findViewById(R.id.ligation_result_layout);
 
         bCalculate.setOnClickListener(this);
 
@@ -60,6 +55,7 @@ public class Ligation extends Activity implements View.OnClickListener {
 
             case R.id.bLigationCalculate:
 
+
                 if (isEmpty(etVectorConcentration) || isEmpty(etInsertConcentration) || isEmpty(etVectorSize) || isEmpty(etInsertSize)) {
 
                     Toast toast = Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT);
@@ -74,15 +70,12 @@ public class Ligation extends Activity implements View.OnClickListener {
                     double DilutionOneToOne = ((VectorConcentration * (InsertSize)) / (VectorSize)) / InsertConcentration;
 
 
-                    resultRelativeLayout.setVisibility(View.VISIBLE);                               //make the text visible
+                    Bundle Ligationparameters = new Bundle();
+                    Ligationparameters.putDouble("ligation_dilution", DilutionOneToOne);
 
-                    hide_keyboard(this);
-
-                    tv1to1result.setText(String.format("%.2f", DilutionOneToOne));                  //round all down to 2 decimal places
-                    tv1to2result.setText(String.format("%.2f", (DilutionOneToOne * 2)));
-                    tv1to4result.setText(String.format("%.2f", (DilutionOneToOne * 4)));
-                    tv1to8result.setText(String.format("%.2f", (DilutionOneToOne * 8)));
-
+                    Intent i = new Intent(Ligation.this, Ligation_Result.class);
+                    i.putExtras(Ligationparameters);
+                    startActivity(i);
 
                 }
             break;
