@@ -1,6 +1,7 @@
 package damiandn.com.omnitool.molecularbiology;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -82,14 +83,16 @@ public class CodonLookup extends Activity implements View.OnClickListener {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+
+
                   String stg = codonList.getItemAtPosition(position).toString();
-                  OpenAminoAcidView(stg);
+                String aminoacidcode = stg.substring(stg.length() - 3);
 
-
-
-
-
-
+                Intent i = new Intent(CodonLookup.this, AminoAcidView_new.class);       //pass in the 3 letter code and start the intent
+                Bundle aaExtras = new Bundle();
+                aaExtras.putString("aminoacidname", aminoacidcode);
+                i.putExtras(aaExtras);
+                startActivity(i);
 
             }
 
@@ -203,7 +206,7 @@ public class CodonLookup extends Activity implements View.OnClickListener {
 
             case "Ala":
 
-                Intent openala = new Intent(CodonLookup.this, AminoAcidView.class);
+                Intent openala = new Intent(getApplicationContext(), AminoAcidView.class);
                 Bundle aladata = new Bundle();
                 aladata.putString("aminoacidname", "alanine");
                 aladata.putString("aminoacidtitle", "Alanine (Ala, A)");

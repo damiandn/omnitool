@@ -45,9 +45,7 @@ public class PCR extends Activity implements View.OnClickListener {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
            //need to add checks to make sure the template isn't too high, and that both these editTexts contain only INTS
-
 
                 switch (position) {
 

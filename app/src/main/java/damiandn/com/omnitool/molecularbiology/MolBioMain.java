@@ -63,7 +63,7 @@ public class MolBioMain extends Activity implements View.OnClickListener {
                     break;
 
                     case 3:
-                        Intent reversecodonlookup = new Intent(MolBioMain.this, PCR.class);
+                        Intent reversecodonlookup = new Intent(MolBioMain.this, AminoAcidLookup.class);
                         startActivity(reversecodonlookup);
                     break;
 

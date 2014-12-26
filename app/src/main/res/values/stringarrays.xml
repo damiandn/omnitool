@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array
+        name="amino_acid_full_names">
+        <item>Alanine</item>
+        <item>Arginine</item>
+        <item>Asparagine</item>
+        <item>Aspartic Acid</item>
+        <item>Cysteine</item>
+        <item>Glutamine</item>
+        <item>Glutamic Acid</item>
+        <item>Glycine</item>
+        <item>Histidine</item>
+        <item>Isoleucine</item>
+        <item>Leucine</item>
+        <item>Lysine</item>
+        <item>Methionine</item>
+        <item>Phenylalanine</item>
+        <item>Proline</item>
+        <item>Serine</item>
+        <item>Threonine</item>
+        <item>Tryptophan</item>
+        <item>Tyrosine</item>
+        <item>Valine</item>
+    </string-array>
+
+    <string-array
+        name="amino_acid_3_letter">
+        <item>Ala</item>
+        <item>Arg</item>
+        <item>Asn</item>
+        <item>Asp</item>
+        <item>Cys</item>
+        <item>Gln</item>
+        <item>Glu</item>
+        <item>Gly</item>
+        <item>His</item>
+        <item>Ile</item>
+        <item>Leu</item>
+        <item>Lys</item>
+        <item>Met</item>
+        <item>Phe</item>
+        <item>Pro</item>
+        <item>Ser</item>
+        <item>Thr</item>
+        <item>Trp</item>
+        <item>Tyr</item>
+        <item>Val</item>
+    </string-array>
+
+
+</resources>
