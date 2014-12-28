@@ -4,6 +4,33 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Molarity Calculator"
+        android:textSize="20dp"
+        android:background="#009688"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvWashTimerTitle"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="3dp"
+        android:elevation="5dp"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:text="Select Calculator"
+        android:id="@+id/tvSetupOfWashes"
+        android:background="#B2DFDB"
+        android:layout_alignParentStart="true"
+        />
+
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

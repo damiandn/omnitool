@@ -68,6 +68,8 @@ public class WashTimer extends Activity implements View.OnClickListener {
         //really should have it wake up when the time goes off
         //probably can do this by throwing a notification
 
+
+
         Bundle parameters = getIntent().getExtras();
 
         numOfWashes = parameters.getInt("numOfWashes");
@@ -183,7 +185,7 @@ public class WashTimer extends Activity implements View.OnClickListener {
                    }
 
         //layoutList.get(0).setAlpha(1);
-        cardList.get(0).setElevation(10);
+        cardList.get(0).setElevation(100);
         buttonArray.get(0).setVisibility(View.VISIBLE);
 
 
@@ -334,7 +336,7 @@ public class WashTimer extends Activity implements View.OnClickListener {
                     //cardList.get(currentTimer).setAlpha(0.5F);
                     cardList.get(currentTimer).setElevation(0);
                     //cardList.get(currentTimer + 1).setAlpha(1);
-                    cardList.get(currentTimer + 1).setElevation(10);
+                    cardList.get(currentTimer + 1).setElevation(100);
 
                     buttonArray.get(currentTimer + 1).setVisibility(View.VISIBLE);
                     handlerArray.get(0).removeCallbacksAndMessages(updateTimerThread);

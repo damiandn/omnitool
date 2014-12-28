@@ -19,7 +19,7 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listView"
+        android:id="@+id/lvImagingMain"
         android:layout_gravity="center_horizontal"
         android:background="#C8E6C9"/>
 

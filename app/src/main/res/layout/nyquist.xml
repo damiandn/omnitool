@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Nyquist Calculator"
+        android:textSize="20dp"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvNyquistCalcTitle"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        />
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Enter Parameters"
+        android:textSize="20dp"
+        android:background="#C8E6C9"
+        android:id="@+id/tvNyquistCalcParams"
+        android:elevation="5dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        />
+
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:textSize="20dp"
+            android:layout_weight="10"
+            android:text="Exictation Wavelength"
+            android:id="@+id/tvExcitationWavelength"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="5"
+            android:padding="3dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/etExcitationWavelength"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:textSize="20dp"
+            android:layout_weight="10"
+            android:text="Emission Wavelength"
+            android:id="@+id/tvEmissionWavelength"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="5"
+            android:padding="3dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/etEmissionWavelength"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:textSize="20dp"
+            android:layout_weight="10"
+            android:text="Medium Refractive Index"
+            android:id="@+id/tvRefractiveIndex"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="5"
+            android:padding="3dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/etRefractiveIndex"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="3dp"
+            android:textSize="20dp"
+            android:layout_weight="10"
+            android:text="Numerical Aperture"
+            android:id="@+id/tvNA"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="5"
+            android:padding="3dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20dp"
+            android:id="@+id/etNA"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/bNyquistCalc"
+        android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C8E6C9">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:text="Nyquist Calculator"
+        android:textSize="20dp"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:id="@+id/tvNyquistCalcResultTitle"
+        android:elevation="8dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="20dp"
+        />
+
+
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="60dp"
+        android:id="@+id/relativeLayout">
+    <View
+
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="10dp"
+        android:layout_margin="10dp"
+        android:background="#FFFFFF"
+        android:elevation="100dp"
+        android:id="@+id/view">
+        </View>
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="#FFFFFF"
+        android:elevation="50dp"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/view2"
+
+        />
+
+        />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nyquist XY"
+            android:textSize="20dp"
+            android:elevation="100dp"
+            android:id="@+id/tvNyquistResultXY"
+            android:layout_alignTop="@+id/view"
+            android:layout_alignLeft="@+id/view"
+            android:layout_centerHorizontal="true"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nyquist Z"
+            android:id="@+id/tvNyquistResultZ"
+            android:textSize="20dp"
+            android:layout_below="@+id/view2"
+            android:layout_alignParentEnd="true" />
+
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_gravity="right" />
+
+</RelativeLayout>

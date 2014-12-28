@@ -28,7 +28,6 @@ public class Ligation extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-//        getWindow().setStatusBarColor(0xFF00796B);
         getWindow().setStatusBarColor(0xFF303F9F);
 
         setContentView(R.layout.ligation);
