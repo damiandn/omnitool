@@ -32,6 +32,7 @@ public class PCR extends Activity implements View.OnClickListener {
         getWindow().setStatusBarColor(0xFF303F9F);
         setContentView(R.layout.pcr_enzyme_select_b);
 
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);       //keeps the screen on
 
         lvPCREnzymeList = (ListView) findViewById(R.id.lvSelectPCREnzyme);
@@ -74,6 +75,9 @@ public class PCR extends Activity implements View.OnClickListener {
                         PCRparameters.putDouble("AnnealingTime", 30);
                         PCRparameters.putString("BufferType", "Buffer (10X)");
                         PCRparameters.putDouble("Buffer", 5);
+                        PCRparameters.putString("EnzymeName", lvPCREnzymeList.getItemAtPosition(position).toString());
+
+
 
 
                         if (isEmpty(TemplateAmount)) {
@@ -140,6 +144,7 @@ public class PCR extends Activity implements View.OnClickListener {
                         PCRparameters1.putDouble("enzyme", 1);
                         PCRparameters1.putString("BufferType", "Buffer (10X)");
                         PCRparameters1.putDouble("Buffer", 5);
+                        PCRparameters1.putString("EnzymeName", lvPCREnzymeList.getItemAtPosition(position).toString());
 
 
                         Intent i1 = new Intent(PCR.this, PCRSetup.class);
@@ -172,6 +177,7 @@ public class PCR extends Activity implements View.OnClickListener {
                         PCRparameters2.putDouble("AnnealingTime", 30);
                         PCRparameters2.putString("BufferType", "Buffer (10X)");
                         PCRparameters2.putDouble("Buffer", 5);
+                        PCRparameters2.putString("EnzymeName", lvPCREnzymeList.getItemAtPosition(position).toString());
 
 
                         if (isEmpty(TemplateAmount)) {
@@ -212,6 +218,7 @@ public class PCR extends Activity implements View.OnClickListener {
                         PCRparameters3.putDouble("AnnealingTime", 30);
                         PCRparameters3.putString("BufferType", "Buffer (5X)");
                         PCRparameters3.putDouble("Buffer", 10);
+                        PCRparameters3.putString("EnzymeName", lvPCREnzymeList.getItemAtPosition(position).toString());
 
 
                         if (isEmpty(TemplateAmount)) {

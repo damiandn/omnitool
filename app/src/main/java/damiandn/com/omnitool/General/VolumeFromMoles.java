@@ -1,9 +1,12 @@
 package damiandn.com.omnitool.General;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,10 +31,13 @@ public class VolumeFromMoles extends Activity implements View.OnClickListener, A
     Integer  concentrationFactor = 1;
     Integer moleFactor = 1;
 
+    String ResultUnits;
+    String ConcentrationUnits;
+
     Double VolumeToAdd, numOfMoles, concentrationTarget;
 
-    String[] concentrationArray = new String[] {"M", "mM", "uM"};
-    String[] moleArray = new String[] {"M", "mM", "uM"};
+    String[] concentrationArray = new String[] {"M", "mM", "μM"};
+    String[] moleArray = new String[] {"M", "mM", "μM"};
 
     String resultUnits;
 
@@ -39,6 +45,12 @@ public class VolumeFromMoles extends Activity implements View.OnClickListener, A
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setExitTransition(new Fade());
+        getWindow().setEnterTransition(new Fade());
+        getWindow().setStatusBarColor(0xFF00796B);
+
         setContentView(R.layout.volumefrommoles);
 
         bCalculate = (Button) findViewById(R.id.bCalculateVolumeFromMoles);
@@ -47,8 +59,6 @@ public class VolumeFromMoles extends Activity implements View.OnClickListener, A
         moles =(EditText) findViewById(R.id.etVolumeFromMoles_Moles);
         concentration =(EditText) findViewById(R.id.etVolumeFromMoles_Concentration);
 
-        result = (TextView) findViewById(R.id.tvVolumeFromMoles_SolventToAdd);
-
         spMoles = (Spinner) findViewById(R.id.spVolumeFromMoles_Moles);
         spConcentration = (Spinner) findViewById(R.id.spVolumeFromMoles_Concentration);
 
@@ -56,7 +66,7 @@ public class VolumeFromMoles extends Activity implements View.OnClickListener, A
         concentrationAdapater.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spConcentration.setAdapter(concentrationAdapater);
         spConcentration.setSelection(1);        //set deault to mM
-
+        ConcentrationUnits = "mM";
 
 
         ArrayAdapter<String> moleAdapater = new ArrayAdapter(this, android.R.layout.simple_spinner_item, moleArray);
@@ -65,7 +75,6 @@ public class VolumeFromMoles extends Activity implements View.OnClickListener, A
         spMoles.setSelection(1);                //set default to mg
 
 
-        result.setVisibility(View.INVISIBLE);
 
     }
 
@@ -93,18 +102,33 @@ public class VolumeFromMoles extends Activity implements View.OnClickListener, A
 
                     VolumeToAdd = (numOfMoles / concentrationTarget) * 1000 * 1000;                                 //report in uL
 
-                    result.setVisibility(View.VISIBLE);
+
 
                     if (VolumeToAdd >= 1000) {
                         resultUnits = " mL";
-                        result.setText(String.format("%.2f", (VolumeToAdd / 1000)).concat(resultUnits));
+                        VolumeToAdd = VolumeToAdd / 1000;
 
 
                     } else {
-                        resultUnits = " uL";
-                        result.setText(String.format("%.2f", VolumeToAdd).concat(resultUnits));
+                        resultUnits = " μL";
                     }
                 }
+
+
+
+                String line1 = "For a final concentration of " + Double.toString(concentrationTarget * concentrationFactor)+ ConcentrationUnits + ", add";
+                String line2 = String.format("%.2f", VolumeToAdd);
+
+
+                Intent i = new Intent(VolumeFromMoles.this, MolarityResult.class);
+
+                Bundle data = new Bundle();
+                data.putString("line1", line1);
+                data.putString("line2", line2);
+                data.putString("units", resultUnits);
+                i.putExtras(data);
+                startActivity(i);
+
 
             break;
 

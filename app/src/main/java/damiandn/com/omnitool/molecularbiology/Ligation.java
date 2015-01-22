@@ -9,8 +9,6 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import damiandn.com.omnitool.R;
@@ -72,7 +70,7 @@ public class Ligation extends Activity implements View.OnClickListener {
                     Bundle Ligationparameters = new Bundle();
                     Ligationparameters.putDouble("ligation_dilution", DilutionOneToOne);
 
-                    Intent i = new Intent(Ligation.this, Ligation_Result.class);
+                    Intent i = new Intent(Ligation.this, LigationResult.class);
                     i.putExtras(Ligationparameters);
                     startActivity(i);
 

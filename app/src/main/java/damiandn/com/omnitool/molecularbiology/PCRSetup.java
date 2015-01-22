@@ -16,10 +16,11 @@ import damiandn.com.omnitool.R;
  */
 public class PCRSetup extends Activity implements View.OnClickListener {
 
-    TextView tvMMNumber, tvBufferAmount, tvBuffer, tvwater, tvprimer1, tvprimer2, tvdNTP, tvtemplate, tvenzyme, tvInitialDenaturationTemp, tvInitialDenaturationTime, tvDenaturationTemp, tvDenaturationTime, tvAnnealingTime, tvExtensionTemp, tvExtensionTime, tvFinalExtensionTemp;
+    TextView tvPCRTitle, tvMMNumber, tvBufferAmount, tvBuffer, tvwater, tvprimer1, tvprimer2, tvdNTP, tvtemplate, tvenzyme, tvInitialDenaturationTemp, tvInitialDenaturationTime, tvDenaturationTemp, tvDenaturationTime, tvAnnealingTime, tvExtensionTemp, tvExtensionTime, tvFinalExtensionTemp;
     Button bAddMM, bSubMM;
     Integer numberMM = 1;
     Double primer, enzyme, dNTP, Template, BufferAmount,water;
+    String titleEnzyme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,9 @@ public class PCRSetup extends Activity implements View.OnClickListener {
         setContentView(R.layout.pcrsetup_c);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
+
+
+        tvPCRTitle = (TextView) findViewById(R.id.tvSetupPCRTitle);
         tvwater = (TextView) findViewById(R.id.tvPCRWater);
         tvprimer1 = (TextView) findViewById(R.id.tvPCRPrimer1);
         tvprimer2 = (TextView) findViewById(R.id.tvPCRPrimer2);
@@ -60,9 +64,9 @@ public class PCRSetup extends Activity implements View.OnClickListener {
 
 
         Bundle PCRparameters = getIntent().getExtras();
-         primer = PCRparameters.getDouble("primer");
-         enzyme = PCRparameters.getDouble("enzyme");
-         dNTP = PCRparameters.getDouble("dNTP");
+        primer = PCRparameters.getDouble("primer");
+        enzyme = PCRparameters.getDouble("enzyme");
+        dNTP = PCRparameters.getDouble("dNTP");
         double ExtensionTemp = PCRparameters.getDouble("ExtensionTemp");
         double ExtensionTimePerKB = PCRparameters.getDouble("ExtensionTimePerKB");
         double DenaturationTime= PCRparameters.getDouble("DenaturationTime");
@@ -70,17 +74,20 @@ public class PCRSetup extends Activity implements View.OnClickListener {
         double InitialDenaturationTime= PCRparameters.getDouble("InitialDenaturationTime");
         double AnnealingTime= PCRparameters.getDouble("AnnealingTime");
         double ProductSize= PCRparameters.getDouble("ProductSize");
-         Template = PCRparameters.getDouble("template");
+        Template = PCRparameters.getDouble("template");
         String BufferType = PCRparameters.getString("BufferType");
-         BufferAmount = PCRparameters.getDouble("Buffer");
+        BufferAmount = PCRparameters.getDouble("Buffer");
+        titleEnzyme = PCRparameters.getString("EnzymeName");
+
 
         double ProductSizeRound = Math.round(ProductSize / 1000);
 
 
 
-
          water = 50 - primer - primer - enzyme - dNTP - BufferAmount - Template;
         double extensiontime = ProductSizeRound * ExtensionTimePerKB;
+
+        tvPCRTitle.setText("Setup " + titleEnzyme + " PCR");
 
 
         tvMMNumber.setText(Integer.toString(numberMM));             //sets the number of the Master Mix to 1

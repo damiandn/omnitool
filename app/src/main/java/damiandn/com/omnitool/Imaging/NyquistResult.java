@@ -19,7 +19,7 @@ public class NyquistResult extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setStatusBarColor(0xFF00796B);
+        getWindow().setStatusBarColor(0xFF388E3C);
         setContentView(R.layout.nyquistresult);
 
 

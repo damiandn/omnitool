@@ -1,7 +1,6 @@
 package damiandn.com.omnitool.Imaging;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 
 import damiandn.com.omnitool.R;
 
@@ -32,7 +30,7 @@ public class NyquistCalc extends Activity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setStatusBarColor(0xFF00796B);
+        getWindow().setStatusBarColor(0xFF388E3C);
         setContentView(R.layout.nyquist);
 
         tvRef = (TextView) findViewById(R.id.tvRefractiveIndex);

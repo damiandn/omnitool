@@ -1,14 +1,16 @@
 package damiandn.com.omnitool.General;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import damiandn.com.omnitool.R;
@@ -20,20 +22,29 @@ public class VolumeFromMass extends Activity implements View.OnClickListener, Ad
 
     Button bCalculate;
     EditText etMolarMass, etMass, etConcentration;
-    Double VolumeToAdd, MolarMass, Mass, Concenration, moles;
-    TextView tvVolumeToAdd;
+    Double VolumeToAdd, MolarMass, Mass, Concentration, moles;
     String ResultUnits;
+    String ConcentrationUnits;
     Spinner spMass, spConcentration;
 
     Integer massFactor = 1;
     Integer  ConcentrationFactor = 1;
 
-    String[] concentrationArray = new String[] {"M", "mM", "uM"};
-    String[] massArray = new String[] {"g", "mg", "ug"};
+
+
+    String[] concentrationArray = new String[] {"M", "mM", "μM"};
+    String[] massArray = new String[] {"g", "mg", "μg"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setExitTransition(new Fade());
+        getWindow().setEnterTransition(new Fade());
+        getWindow().setStatusBarColor(0xFF00796B);
+
+
         setContentView(R.layout.volumefrommass);
 
         bCalculate = (Button) findViewById(R.id.bCalculateVolumeFromMass);
@@ -45,7 +56,6 @@ public class VolumeFromMass extends Activity implements View.OnClickListener, Ad
         spConcentration.setOnItemSelectedListener(this);
 
 
-        tvVolumeToAdd = (TextView) findViewById(R.id.tvResult_VolumeFromMass_SolventToAdd);
         etMolarMass = (EditText) findViewById(R.id.etVolumeFromMass_MolarMass);
         etMass = (EditText) findViewById(R.id.etVolumeFromMass_Mass);
         etConcentration = (EditText) findViewById(R.id.etVolumeFromMass_Concentration);
@@ -55,7 +65,7 @@ public class VolumeFromMass extends Activity implements View.OnClickListener, Ad
         concentrationAdapater.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spConcentration.setAdapter(concentrationAdapater);
         spConcentration.setSelection(1);        //set deault to mM
-
+        ConcentrationUnits = "mM";
 
 
         ArrayAdapter<String> massAdapater = new ArrayAdapter(this, android.R.layout.simple_spinner_item, massArray);
@@ -71,7 +81,6 @@ public class VolumeFromMass extends Activity implements View.OnClickListener, Ad
 
             case R.id.bCalculateVolumeFromMass:
 
-
              if (isEmpty(etMass) || isEmpty(etMolarMass) || isEmpty(etConcentration)) {
 
                 Toast toast = Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT);
@@ -81,29 +90,33 @@ public class VolumeFromMass extends Activity implements View.OnClickListener, Ad
 
                 MolarMass = Double.parseDouble(etMolarMass.getText().toString());
                 Mass = Double.parseDouble(etMass.getText().toString()) / massFactor;                //convert to grams
-                Concenration = Double.parseDouble(etConcentration.getText().toString()) / ConcentrationFactor;            //convert to moles/L
+                Concentration = Double.parseDouble(etConcentration.getText().toString()) / ConcentrationFactor;            //convert to moles/L
 
                 moles = (Mass / MolarMass);
 
-                VolumeToAdd = (moles / Concenration) * 1000 * 1000;                                 //report in uL
-
-
+                VolumeToAdd = (moles / Concentration) * 1000 * 1000;                                 //report in uL
 
                 if (VolumeToAdd >= 1000) {
-                    ResultUnits = " mL";
-                    tvVolumeToAdd.setText(String.format("%.2f", (VolumeToAdd / 1000)).concat(ResultUnits));
-
+                    ResultUnits = "mL";
+                    VolumeToAdd = VolumeToAdd / 1000;
 
                 } else {
-                    ResultUnits = " uL";
-                    tvVolumeToAdd.setText(String.format("%.2f", VolumeToAdd).concat(ResultUnits));
+                    ResultUnits = "μL";
                 }
             }
 
+                String line1 = "For a final concentration of " + Double.toString(Concentration * ConcentrationFactor)+ ConcentrationUnits + ", add";
+                String line2 = String.format("%.2f", VolumeToAdd);
+
+                Intent i = new Intent(VolumeFromMass.this, MolarityResult.class);
+                Bundle data = new Bundle();
+                data.putString("line1", line1);
+                data.putString("line2", line2);
+                data.putString("units", ResultUnits);
+                i.putExtras(data);
+                startActivity(i);
+
                 break;
-
-
-
         }
 
 
@@ -126,23 +139,20 @@ public class VolumeFromMass extends Activity implements View.OnClickListener, Ad
 
 
                         case 0:
-
                             ConcentrationFactor = 1;
-
+                            ConcentrationUnits = "M";
                         break;
 
                         case 1:
                             ConcentrationFactor = 1000;
-
+                            ConcentrationUnits = "mM";
 
                         break;
 
                         case 2:
+                            ConcentrationUnits = "uM";
                             ConcentrationFactor = 1000000;
-
-
-
-                            break;
+                        break;
                     }
 
                 break;

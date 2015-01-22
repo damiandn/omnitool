@@ -11,10 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import damiandn.com.omnitool.R;
-import damiandn.com.omnitool.molecularbiology.AminoAcidLookup;
-import damiandn.com.omnitool.molecularbiology.CodonLookup;
-import damiandn.com.omnitool.molecularbiology.Ligation;
-import damiandn.com.omnitool.molecularbiology.PCR;
 
 /**
  * Created by Desktop on 12/17/2014.
@@ -32,7 +28,7 @@ public class ImagingMain extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         getWindow().setExitTransition(new Fade());
         getWindow().setEnterTransition(new Fade());
-        getWindow().setStatusBarColor(0xFF00796B);
+        getWindow().setStatusBarColor(0xFF388E3C);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
         setContentView(R.layout.imagingmain);
@@ -55,6 +51,11 @@ public class ImagingMain extends Activity implements View.OnClickListener{
                         startActivity(nyq);
                         break;
 
+
+                    case 1:
+                        Intent fp = new Intent(ImagingMain.this, FluorophoreChart.class);
+                        startActivity(fp);
+                        break;
 
                 }
 

@@ -24,6 +24,7 @@ public class GeneralMenu extends Activity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setStatusBarColor(0xFF00796B);
         getWindow().setExitTransition(new Fade());
         getWindow().setEnterTransition(new Fade());
         requestWindowFeature(Window.FEATURE_NO_TITLE);

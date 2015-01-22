@@ -2,7 +2,7 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android">
 
        <changeBounds
-        android:duration="400"
+        android:duration="300"
         >
         <targets>
             <target android:targetId="@id/tvStartMoBio" />
@@ -17,7 +17,7 @@
     </changeImageTransform>
 
     <changeBounds
-        android:duration="400"
+        android:duration="300"
         >
         <targets>
             <target android:targetId="@id/tvStartGeneral" />
@@ -32,7 +32,7 @@
     </changeImageTransform>
 
     <changeBounds
-        android:duration="400"
+        android:duration="300"
         >
         <targets>
             <target android:targetId="@id/tvMolBioTitle" />
@@ -47,7 +47,7 @@
     </changeImageTransform>
 
     <changeBounds
-        android:duration="400"
+        android:duration="300"
         >
         <targets>
             <target android:targetId="@id/tvListItem" />

@@ -17,9 +17,8 @@ import damiandn.com.omnitool.R;
 public class MolarityMenu extends Activity implements View.OnClickListener {
 
     ListView molarityListView;
-    String[] molarityItemsArray = new String[]{"Volume from mass and concentration", "Volume from molar amount and concentration", "concentration from mass and volume", "dilute a solution"};
+    String[] molarityItemsArray = new String[]{"Volume from mass and concentration", "Volume from molar amount and concentration", "Dilute a solution"};
     ArrayAdapter<String> adapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,36 +40,21 @@ public class MolarityMenu extends Activity implements View.OnClickListener {
             switch (position) {
 
                 case 0:
-
                     Intent i = new Intent(MolarityMenu.this, VolumeFromMass.class);
                     startActivity(i);
-
                 break;
 
                 case 1:
-
                     Intent a = new Intent(MolarityMenu.this, VolumeFromMoles.class);
                     startActivity(a);
+                break;
 
-                    break;
 
                 case 2:
-
-                    Intent j = new Intent(MolarityMenu.this, ConcentrationFromMass.class);
-                    startActivity(j);
-
-                    break;
-
-                case 3:
-
                     Intent k = new Intent(MolarityMenu.this, DiluteSolution.class);
                     startActivity(k);
-
-                    break;
+                break;
             }
-
-
-
         };
     });
 

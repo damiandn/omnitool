@@ -36,27 +36,30 @@
 
     <LinearLayout
         android:orientation="horizontal" android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="100"
+        >
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Vector Size"
-        android:layout_weight="10"
+        android:text="Vector Size (bp)"
+        android:layout_weight="70"
         android:layout_marginTop="10dp"
         android:padding="3dp"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:id="@+id/tvVectorSize" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="5"
+            android:layout_weight="30"
             android:layout_marginTop="10dp"
             android:padding="3dp"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:id="@+id/etVectorSize"
            android:layout_alignParentEnd="true" />
 
@@ -64,25 +67,28 @@
 
     <LinearLayout
         android:orientation="horizontal" android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:weightSum="100">
 
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Insert Size"
-        android:layout_weight="10"
+        android:text="Insert Size (bp)"
+        android:layout_weight="70"
         android:padding="3dp"
-        android:textSize="20dp"
+        android:textSize="18dp"
         android:layout_below="@id/tvVectorSize"
         android:id="@+id/tvInsertSize" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="5"
             android:padding="3dp"
+            android:layout_weight="30"
+
             android:textSize="20dp"
             android:id="@+id/etInsertSize"
             android:layout_alignBottom="@id/tvInsertSize"
@@ -94,25 +100,27 @@
 
         <LinearLayout
             android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="100">
 
         <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Vector Concentration"
+        android:text="Vector Concentration (ng/μL)"
         android:padding="3dp"
-        android:textSize="20dp"
-        android:layout_weight="10"
+        android:textSize="18dp"
+        android:layout_weight="70"
         android:layout_below="@id/tvInsertSize"
         android:id="@+id/tvVectorConcentration" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="5"
                 android:textSize="20dp"
                 android:padding="3dp"
+                android:layout_weight="30"
                 android:layout_alignBottom="@id/tvVectorConcentration"
                 android:id="@+id/etVectorConcentration"
                 android:layout_below="@+id/etInsertSize"
@@ -122,26 +130,29 @@
 
         <LinearLayout
             android:orientation="horizontal" android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:weightSum="100">
 
 
         <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:layout_weight="10"
+        android:textSize="18dp"
+        android:layout_weight="70"
         android:layout_below="@id/tvVectorConcentration"
-        android:text="Insert Concentration"
+        android:text="Insert Concentration (ng/μL)"
         android:padding="3dp"
-        android:id="@+id/tvInsertConcentration" />
+        android:id="@+id/tvInsertConcentration"
+           />
 
 
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="5"
+                android:layout_weight="30"
                 android:padding="3dp"
                 android:textSize="20dp"
                 android:layout_alignBottom="@id/tvInsertConcentration"

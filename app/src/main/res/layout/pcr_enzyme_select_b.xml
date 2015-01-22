@@ -77,7 +77,7 @@
         android:textSize="20dp"
         android:layout_marginTop="10dp"
         android:layout_weight="10"
-        android:text="Template amount (uL)"
+        android:text="Template amount (μL)"
         android:id="@+id/tvPCRTemplateAmount"
          />
 

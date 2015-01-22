@@ -52,10 +52,6 @@
             android:windowSoftInputMode="stateHidden">
         </activity>
 
-        <activity android:name=".General.ConcentrationFromMass"
-            android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden">
-        </activity>
 
         <activity android:name=".General.VolumeFromMass"
             android:label="@string/app_name"
@@ -90,7 +86,7 @@
             android:label="@string/app_name">
         </activity>
 
-        <activity android:name=".molecularbiology.Ligation_Result"
+        <activity android:name=".molecularbiology.LigationResult"
             android:label="@string/app_name">
         </activity>
 
@@ -109,6 +105,15 @@
         <activity android:name=".Imaging.NyquistResult"
             android:label="@string/app_name">
         </activity>
+
+        <activity android:name=".Imaging.FluorophoreChart"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity android:name=".General.MolarityResult"
+            android:label="@string/app_name">
+        </activity>
+
 
     </application>
 

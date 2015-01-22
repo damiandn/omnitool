@@ -1,12 +1,10 @@
 package damiandn.com.omnitool.molecularbiology;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.transition.Fade;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.view.Window;
@@ -250,7 +248,7 @@ public class AminoAcidView_new extends Activity {
             case "Leu":
 
                 aaname = "leucine";
-                aaTitle = "(Leucine (Leu, L))";
+                aaTitle = "Leucine (Leu, L)";
                 COOHPKA = 2.4;
                 NH2PKA = 9.6;
                 scPKA = 0.0;

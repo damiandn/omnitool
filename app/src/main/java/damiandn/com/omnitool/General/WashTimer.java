@@ -1,10 +1,14 @@
 package damiandn.com.omnitool.General;
 
 import android.app.Activity;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.PowerManager;
 import android.os.SystemClock;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +34,9 @@ public class WashTimer extends Activity implements View.OnClickListener {
     ArrayList<CardView> cardList = new ArrayList<>();
     ArrayList<TextView> timerArray = new ArrayList<TextView>();
     ArrayList<Handler> handlerArray = new ArrayList<Handler>();
+
+    Boolean activeTimers;
+
 
     Button start1, start2, start3, start4, start5, start6, clearall;
     TextView timer1, timer2, timer3, timer4, timer5, timer6;
@@ -68,6 +75,7 @@ public class WashTimer extends Activity implements View.OnClickListener {
         //really should have it wake up when the time goes off
         //probably can do this by throwing a notification
 
+        activeTimers = true;
 
 
         Bundle parameters = getIntent().getExtras();
@@ -218,12 +226,12 @@ public class WashTimer extends Activity implements View.OnClickListener {
                 startTime = SystemClock.uptimeMillis();
                 handlerArray.get(0).postDelayed(updateTimerThread, 0);
 
-            break;
+                break;
 
             case R.id.bTime2Start:
 
 
-               // handlerArray.get(0).removeCallbacksAndMessages(updateTimerThread);
+                // handlerArray.get(0).removeCallbacksAndMessages(updateTimerThread);
                 currentTimer++;
                 timeInMillseconds = 0;
                 startTime = SystemClock.uptimeMillis();
@@ -274,16 +282,14 @@ public class WashTimer extends Activity implements View.OnClickListener {
 
             case R.id.bClearTimers:
 
+            if (activeTimers) {
                 Toast toast = Toast.makeText(this, "Clearing Timers", Toast.LENGTH_SHORT);
                 toast.show();
-
-
                 handlerArray.get(currentTimer).removeCallbacksAndMessages(updateTimerThread);
-
+                activeTimers = false;
 
 
                 for (int i = 0; i < numOfWashes; i++) {
-                    //layoutList.get(i).setAlpha(0.5F);
                     cardList.get(i).setElevation(0);
                     timerArray.get(i).setText("" + 0 + ":" + String.format("%02d", 0));
                     buttonArray.get(i).setVisibility(View.INVISIBLE);
@@ -293,6 +299,7 @@ public class WashTimer extends Activity implements View.OnClickListener {
                 currentTimer = numOfWashes;
                 timeInMillseconds = 0;
                 updatedTime = 0;
+            }
                 break;
 
         }
@@ -329,8 +336,8 @@ public class WashTimer extends Activity implements View.OnClickListener {
             } else {
 
 
-
                 buttonArray.get(currentTimer).setVisibility(View.INVISIBLE);
+                ThrowNotification(currentTimer);
 
                 if (currentTimer < numOfWashes) {
                     //cardList.get(currentTimer).setAlpha(0.5F);
@@ -349,6 +356,30 @@ public class WashTimer extends Activity implements View.OnClickListener {
         }
     };
 
+
+    public void ThrowNotification(int timerNumber) {
+
+        if (activeTimers) {
+
+            Uri soundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+
+            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this)
+                    .setSmallIcon(R.drawable.ic_alarm_add_black_18dp)
+                    .setContentTitle("Timer")
+                    .setContentText("Timer " + Integer.toString(timerNumber) + " finished")
+                    .setSound(soundUri);
+
+
+
+            NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+
+            mNotificationManager.notify(1, mBuilder.build());
+
+        }
+
+
+    }
 
 
         }
